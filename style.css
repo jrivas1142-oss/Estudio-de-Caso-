@@ -1,0 +1,391 @@
+/* =================================
+   BASE Y RESET (Colores BK: #f7f3e8 beige, #3e2723 marron oscuro, #e54b0c naranja, #d11e3b rojo)
+   ================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    background-color: #f7f3e8; 
+    color: #3e2723; 
+    line-height: 1.6;
+}
+
+/* --- SOLUCIÓN MENÚ MÓVIL: OCULTAR CHECKBOX POR DEFECTO --- */
+.menu-toggle {
+    display: none;
+}
+
+/* --- Centrado Global de Contenido --- */
+.header-content, .content-wrapper, .whopper-section {
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
+/* =================================
+   1. LAYOUT DE ESCRITORIO (BASE)
+   ================================= */
+
+/* --- Navegación Superior --- */
+.main-header {
+    background-color: #f7f3e8;
+    padding: 20px 0;
+}
+
+.logo img {
+    height: 65px; 
+    display: block;
+}
+
+.main-nav {
+    display: flex; 
+    justify-content: center;
+    gap: 35px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.main-nav a {
+    color: #3e2723;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 700;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover {
+    color: #e54b0c;
+}
+
+/* --- Banner HOME OF THE WHOPPER --- */
+.whopper-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.whopper-box {
+    background-color: #3e2723;
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 900;
+    padding: 18px 40px;
+    margin: 0 auto;
+    width: 85%;
+    border-radius: 10px;
+    letter-spacing: 3px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slogan-text {
+    font-size: 1.6rem; 
+    margin-top: 35px; 
+    color: #59392c;
+    font-weight: 600;
+}
+
+/* ----------------------------------------------------------------- */
+/* --- Sección de Carrusel (CON FLECHAS POSICIONADAS ABSOLUTAMENTE) --- */
+/* ----------------------------------------------------------------- */
+.promo-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.king-mix-banner {
+    background-color: #f7f3e8; 
+    width: 100%; 
+    height: 350px; 
+    
+    /* MODIFICACIÓN CLAVE: Usamos relative para posicionar las flechas */
+    display: block; 
+    position: relative; 
+    padding: 0 20px; 
+}
+
+/* --- ESTILOS DEL CARRUSEL --- */
+.carousel-container {
+    display: flex; 
+    overflow-x: scroll; 
+    scroll-behavior: smooth; 
+    scroll-snap-type: x mandatory; 
+    gap: 0;
+    width: 100%; 
+    height: 100%;
+    
+    /* Esconder la barra de desplazamiento */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-slide {
+    flex: 0 0 100%; 
+    scroll-snap-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.promo-design-img {
+    max-width: 100%; 
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* --- ESTILOS DE FLECHAS ABSOLUTAS --- */
+.arrow {
+    font-size: 3.5rem;
+    cursor: pointer;
+    opacity: 0.9; 
+    z-index: 3; /* Asegura que la flecha esté por encima de la imagen */
+    color: #3e2723;
+    user-select: none; 
+    
+    /* Posicionamiento absoluto y centrado vertical */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); 
+    padding: 0 10px; 
+}
+
+.left-arrow {
+    left: 20px; /* Alineada con el borde del padding del banner */
+}
+
+.right-arrow {
+    right: 20px; /* Alineada con el borde del padding del banner */
+}
+/* ----------------------------------------------------------------- */
+
+/* --- Título Menú y Productos --- */
+.section-title {
+    color: #e54b0c; 
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-align: center;
+    padding: 40px 0 60px 0;
+    text-transform: uppercase;
+}
+
+/* --- Redes Sociales Flotantes --- */
+.social-float-desktop {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: white;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+    border-radius: 5px 0 0 5px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px;
+}
+.social-float-desktop img {
+    width: 35px;
+    margin: 7px 0;
+    opacity: 0.8;
+}
+
+/* ============================================================== */
+/* === TARJETAS DE PRODUCTOS (FORMATO RECTANGULAR GRANDE Y CENTRADO) */
+
+.products-grid {
+    padding: 20px 20px 60px 20px;
+    display: grid; 
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    justify-content: center;
+}
+
+.product-card {
+    background-color: white;
+    padding: 20px; 
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+    transition: transform 0.3s;
+    overflow: hidden; 
+    
+    min-height: 450px; 
+    position: relative; 
+    max-width: none;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card h3 {
+    position: static; 
+    background-color: transparent; 
+    padding: 0;
+    margin-bottom: 5px;
+    color: #e54b0c; 
+    font-size: 1.5rem; 
+    font-weight: 700;
+}
+
+.product-card p {
+    display: block; 
+    color: #3e2723;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.product-img {
+    max-width: 100%;
+    height: 70%; 
+    
+    object-fit: cover; 
+    object-position: center center; 
+    
+    border-radius: 5px; 
+    margin: 0 auto; 
+    display: block;
+}
+
+/* ============================================================== */
+
+
+/* --- FOOTER --- */
+footer {
+    background-color: #3e2723;
+    color: #f7f3e8;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: 40px;
+    border-top: 5px solid #e54b0c;
+}
+footer p {
+    margin: 0;
+}
+
+
+/* =================================
+   2. ADAPTACIÓN RESPONSIVA (MEDIA QUERIES)
+   ================================= */
+
+/* --- TABLET y ESCRITORIO Pequeño (>= 769px) --- */
+@media (min-width: 769px) {
+    
+    /* HEADER: Diseño de escritorio */
+    .main-header {
+        text-align: left;
+        padding: 20px;
+    }
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .main-nav {
+        display: flex !important; 
+        justify-content: flex-end;
+        border-bottom: none;
+        padding: 0;
+        flex-grow: 1; 
+        margin-left: 50px;
+        position: static; 
+    }
+    .hamburger {
+        display: none !important; 
+    }
+
+    /* Productos: 3 columnas en tablet */
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 30px; 
+    }
+}
+
+/* --- ESCRITORIO Grande (>= 1024px) --- */
+@media (min-width: 1024px) {
+    /* Productos: 4 columnas en escritorio (máximo) */
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr); 
+        max-width: none; 
+        margin: 0;
+    }
+    .product-card {
+        margin: 0;
+    }
+}
+
+/* --- MÓVIL (<= 768px) --- */
+@media (max-width: 768px) {
+    
+    /* --- SOLUCIÓN MENÚ HAMBURGUESA --- */
+    .hamburger {
+        display: block !important; 
+        position: absolute;
+        top: 35px; 
+        right: 20px;
+        font-size: 2rem; 
+        color: #3e2723;
+        z-index: 11;
+        cursor: pointer;
+    }
+    
+    .main-nav, .social-float-desktop {
+        display: none; 
+    }
+    
+    .menu-toggle:checked ~ .main-nav {
+        display: flex !important; 
+        flex-direction: column; 
+        position: absolute;
+        top: 75px; 
+        left: 0;
+        width: 100%;
+        background-color: #3e2723; 
+        z-index: 5;
+    }
+    .main-nav a {
+        padding: 15px 20px;
+        border-bottom: 1px solid #59392c;
+        color: white; 
+        text-align: left;
+    }
+    /* ---------------------------------- */
+
+    /* Ajuste de Contenido a móvil */
+    .king-mix-banner {
+        height: 200px; 
+        padding: 0 5px; /* Dejamos un pequeño espacio lateral en el contenedor en móvil */
+    }
+    .arrow {
+        font-size: 2rem;
+    }
+    
+    /* Posición de las flechas en móvil */
+    .left-arrow {
+        left: 5px; 
+    }
+
+    .right-arrow {
+        right: 5px;
+    }
+    
+    .whopper-box {
+        font-size: 1.8rem; 
+        width: 100%; 
+    }
+    .slogan-text {
+        font-size: 1.2rem;
+    }
+}

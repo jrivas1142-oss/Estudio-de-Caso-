@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger King Rediseño Responsive</title>
+    <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="img/logooooo.png" alt="Burger King Logo">
+            </a>
+            
+            <input type="checkbox" id="menu-toggle-id" class="menu-toggle">
+            <label for="menu-toggle-id" class="hamburger">&#9776;</label>
+
+            <nav class="main-nav">
+                <a href="#">Quiénes Somos</a>
+                <a href="#">Menú</a>
+                <a href="#">Restaurantes</a>
+                <a href="#">Islas</a>
+                <a href="#">Ventas Corporativas</a>
+                <a href="#">Fiestas Infantiles</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="whopper-section">
+        <h2 class="whopper-box">
+            HOME OF THE WHOPPER®
+        </h2>
+        <p class="slogan-text">A la parrilla desde 1954</p>
+    </section>
+
+    <div class="promo-section">
+        <div class="king-mix-banner">
+            <div class="arrow left-arrow" onclick="scrollCarousel(-1)">&lt;</div>
+            
+            <div class="carousel-container" id="promo-carousel">
+                <div class="carousel-slide">
+                    <img src="img/BANNERKITKAT.jpg" alt="Promoción King Mix KitKat" class="promo-design-img">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img/burguen.jpeg" alt="Promoción King Mix Whopper Jr" class="promo-design-img">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img/imagenhsg.jpeg" alt="Promoción King Mix Whopper Jr" class="promo-design-img">
+                </div>
+            </div>
+            
+            <div class="arrow right-arrow" onclick="scrollCarousel(1)">&gt;</div>
+        </div>
+    </div>
+    <div class="content-wrapper">
+        <h2 class="section-title">MENÚ</h2>
+
+        <div class="products-grid">
+            
+            <div class="product-card">
+                <h3>Colecciona Sonic!</h3>
+                <p>Colecciona los 6 juguetes de Sonic</p>
+                <img src="img/images.jpg" alt="Sonic Combo" class="product-img">
+            </div>
+
+            <div class="product-card">
+                <h3>Hamburguesas</h3>
+                <p>Nuestra selección de Whopper.</p>
+                <img src="img/imagesjk.jpg" alt="Combo Whopper Celeste" class="product-img">
+            </div>
+
+            <div class="product-card">
+                <h3>Acompañamientos</h3>
+                <p>Papas, aros de cebolla y más.</p>
+                <img src="img/imagesjhskj.jpg" alt="Papas y Aros" class="product-img">
+            </div>
+
+            <div class="product-card">
+                <h3>Postres</h3>
+                <p>Nuestra línea de King Mix.</p>
+                <img src="img/CPOSTRES.jpg" alt="Postres" class="product-img">
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="social-float-desktop">
+        <a href="#"><img src="Logo_de_Facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="Instagram_logo_2022.svg.webp" alt="Instagram"></a>
+        <a href="#"><img src="logotipo-tik-tok_578229-290.avif" alt="TikTok"></a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Burger King Rediseño Responsive. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const carousel = document.getElementById('promo-carousel');
+        const scrollAmount = carousel ? carousel.clientWidth : 0;
+
+        function scrollCarousel(direction) {
+            if (carousel) {
+                carousel.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+</body>
+</html>
